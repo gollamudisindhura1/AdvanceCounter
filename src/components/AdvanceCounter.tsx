@@ -52,25 +52,30 @@ const reset = ()=>{
 
     return(
         <div className="container mt -5">
-            <div className="card p-4 shadow-sm">
-                <h3 className="text-center mb-3">Counter</h3>
-                <h2 className="text-center">Current Count: {count}</h2>
+            <div className="card p-4 counter-card">
+                <h3 className="text-center mb-3 counter-title">Counter</h3>
+                <h2 className="text-center counter -value">Current Count: {count}</h2>
+            <div className="counter-actions mt-3">
             <CounterControls 
 
             onDecrement={() => setCount((c) => c - step) }
             onIncrement={() => setCount((c) => c + step) }
             onReset={reset}
             />
-
+            </div>
+            <div className="step-input mt-3">
             <StepInput
             step = {step} setStep = {setStep}
             />
-            <p className="text-muted text-center mt-3">
+            </div>
+            <p className="text-center mt-3 save-status">
                {status}
             </p>
+            <div className="history-box p-3 mt-3">
             <CounterHistory history={history}
             
             />
+            </div>
 
             <p className="text-muted text-center mt-3">
                 Use ArrowUp to increment and ArrowDown to decrement.

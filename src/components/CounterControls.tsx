@@ -8,10 +8,10 @@ const CounterControls=({onIncrement, onDecrement, onReset} : Props)=>{
 
     return(
        <div className="d-flex justify-content-center gap-2 my-3">
-        <button className="btn btn-danger" onClick={onDecrement}>Decrement</button>
-        <button className="btn btn-primary" onClick={onIncrement
+        <button className="btn btn-primary" onClick={onDecrement}>Decrement</button>
+        <button className="btn btn-success" onClick={onIncrement
         }>Increment</button>
-        <button className="btn btn-secondary" onClick={onReset}>Reset</button>
+        <button className="btn btn-danger" onClick={onReset}>Reset</button>
        </div>
 
     )
