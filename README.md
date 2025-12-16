@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# Lab - Advance Counter App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project demonstrates advanced usage of Hooks, useSatate and useEffect. The app goes beyond a basic counter by adding history tracking, keyboard interactions, auto-saving, and reset functionality.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Display Current Count
+   - Shows the current counter value starting from 0 or a previously saved value.
+   Increment and Decrement
 
-## Expanding the ESLint configuration
+2. Buttons to increase or decrease the count.
+   - Supports a custom step value instead of just incrementing by 1.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3. Custom Step Input
+   -  We can define how much the count increases or decreases each time.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+4. History Tracking
+   - Keeps track of all previous count values.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+5. Displays the full history to the user.
+   - It auto saves to Local Storage
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+6. Automatically saves the current count whenever it changes.
+   - It loads the saved count when the app starts.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+7. Keyboard Controls
+   - ArrowUp increments the count.
+   - ArrowDown decrements the count.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+8. Reset Functionality
+   - Resets the count back to 0.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+9. Async Functions
+   - I used Async functions for loading and saving data from local storage to simulate async behavior.
+
+## Future Improvements
+
+1. Add a toggle to switch between dark mode and light mode.
+2. Limit the count history for better performance.
+
